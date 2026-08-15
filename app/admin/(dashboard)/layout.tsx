@@ -19,14 +19,9 @@ const NAV: NavSection[] = [
       { href: '/admin/reviews', label: 'Reviews', icon: 'star' },
       { href: '/admin/projects', label: 'Projects', icon: 'image' },
       { href: '/admin/images', label: 'Images', icon: 'photos' },
-    ],
-  },
-  {
-    section: 'Coming Soon',
-    items: [
-      { href: '#', label: 'Services', icon: 'wrench', disabled: true },
-      { href: '#', label: 'Team', icon: 'users', disabled: true },
-      { href: '#', label: 'Service Area', icon: 'map', disabled: true },
+      { href: '/admin/services', label: 'Services', icon: 'wrench' },
+      { href: '/admin/team', label: 'Team', icon: 'users' },
+      { href: '/admin/service-area', label: 'Service Area', icon: 'map' },
     ],
   },
   {

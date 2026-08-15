@@ -4,6 +4,7 @@
    variables are duplicated here rather than imported from the public
    site's globals.css, keeping the admin bundle self-contained and lean.
    ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap');
 :root{
   --charcoal:#1a1815;
   --charcoal-2:#242220;
@@ -178,3 +179,63 @@ button{font-family:inherit;}
 .admin-media-actions label.admin-btn.disabled{opacity:.55;pointer-events:none;}
 @media(max-width:1050px){.admin-media-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:680px){.admin-media-grid{grid-template-columns:1fr;padding:16px;}}
+
+/* ---- Shared bits used by Team / Services / Service Area editors ---- */
+.admin-head-sub{font-size:13px;color:var(--steel);margin-top:4px;font-weight:400;text-transform:none;letter-spacing:0;}
+.admin-inline-message{font-size:13px;color:var(--steel);margin-right:auto;align-self:center;}
+.admin-btn-ghost{background:transparent;color:var(--steel);border:1px solid var(--line);}
+.admin-btn-ghost:hover{border-color:var(--steel);color:var(--ink);}
+.admin-icon-btn.danger{color:#b23b3b;}
+.admin-icon-btn.danger:hover{background:#fbeaea;}
+
+/* ---- Team manager ---- */
+.admin-team-list{display:flex;flex-direction:column;}
+.admin-team-row{display:grid;grid-template-columns:64px 1fr auto;gap:18px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--line);}
+.admin-team-row:last-child{border-bottom:none;}
+.admin-team-photo{width:64px;height:64px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--cream);}
+.admin-team-photo img{width:64px;height:64px;object-fit:cover;display:block;}
+.admin-team-fields{display:flex;flex-direction:column;gap:8px;min-width:0;}
+.admin-team-fields input{width:100%;border:1px solid var(--line);border-radius:4px;padding:8px 11px;font-family:var(--font-inter);font-size:13.5px;background:var(--cream);color:var(--ink);}
+.admin-team-fields input:focus{outline:none;border-color:var(--copper);}
+.admin-team-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+
+/* ---- Services manager ---- */
+.admin-services-list{display:flex;flex-direction:column;}
+.admin-service-row{border-bottom:1px solid var(--line);}
+.admin-service-row:last-child{border-bottom:none;}
+.admin-service-summary{display:grid;grid-template-columns:72px 1fr auto;gap:18px;align-items:center;padding:16px 24px;}
+.admin-service-thumb{width:72px;height:72px;border-radius:6px;overflow:hidden;flex-shrink:0;background:var(--cream);}
+.admin-service-thumb img{width:72px;height:72px;object-fit:cover;display:block;}
+.admin-service-main{min-width:0;display:flex;flex-direction:column;gap:4px;}
+.admin-service-titleline{display:flex;align-items:center;gap:8px;font-size:15px;}
+.admin-service-main > span{font-size:13px;color:var(--steel);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.admin-service-actions{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+.admin-service-editor{padding:0 24px 22px;border-top:1px dashed var(--line);}
+.admin-service-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding-top:18px;}
+.admin-service-fields label{display:flex;flex-direction:column;gap:6px;font-size:12px;}
+.admin-service-fields label.wide{grid-column:1/-1;}
+.admin-service-fields label span{font-family:var(--font-plex-mono);font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--steel);}
+.admin-service-fields input,.admin-service-fields textarea{border:1px solid var(--line);border-radius:4px;padding:9px 12px;font-family:var(--font-inter);font-size:13.5px;background:var(--cream);color:var(--ink);}
+.admin-service-fields input:focus,.admin-service-fields textarea:focus{outline:none;border-color:var(--copper);}
+.admin-service-image-edit{display:flex;gap:16px;align-items:flex-start;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);}
+.admin-service-image-edit img{width:120px;height:90px;border-radius:6px;object-fit:cover;flex-shrink:0;background:var(--cream);}
+.admin-service-image-edit b{display:block;font-size:13.5px;margin-bottom:4px;}
+.admin-service-image-edit p{font-size:12.5px;color:var(--steel);margin-bottom:10px;max-width:46ch;}
+@media(max-width:760px){
+  .admin-service-summary{grid-template-columns:56px 1fr;}
+  .admin-service-actions{grid-column:1/-1;justify-content:flex-start;margin-top:10px;}
+  .admin-service-fields{grid-template-columns:1fr;}
+  .admin-service-image-edit{flex-direction:column;}
+}
+
+/* ---- Service Area manager ---- */
+.admin-area-add{display:flex;gap:10px;margin-bottom:20px;}
+.admin-area-add input{flex:1;border:1px solid var(--line);border-radius:4px;padding:11px 13px;font-family:var(--font-inter);font-size:14px;background:var(--cream);color:var(--ink);}
+.admin-area-add input:focus{outline:none;border-color:var(--copper);}
+.admin-chip-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.admin-area-chip{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-radius:6px;padding:12px 14px;font-size:14px;background:var(--white);}
+.admin-area-chip div{display:flex;align-items:center;gap:4px;}
+.admin-area-chip button{width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;border-radius:4px;color:var(--steel);font-size:14px;}
+.admin-area-chip button:hover{background:var(--cream);color:var(--ink);}
+.admin-area-chip button.remove:hover{background:#fbeaea;color:#b23b3b;}
+@media(max-width:600px){.admin-chip-list{grid-template-columns:1fr;}}
